@@ -907,3 +907,24 @@ body.modal-open {
     }
 
 }
+
+@media (max-width: 400px) {
+
+    .story-modal {
+        padding: 15px;
+    }
+
+    .modal-content {
+        padding: 45px 22px 30px;
+    }
+
+    .modal-title {
+        font-size: 34px;
+    }
+
+    .modal-story {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+}
