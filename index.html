@@ -12,29 +12,42 @@
 
 <body>
 
-    <header>
-        <nav>
-            <a href="#" class="logo">Wanderlog</a>
+    <!-- Header -->
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <a href="#home" class="logo">
+                <span class="logo-mark">W</span>
+                <span class="logo-text">wanderlog</span>
+            </a>
 
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Destinations</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#about">About</a></li>
             </ul>
+
         </nav>
+
     </header>
+
 
     <main>
 
-        <section class="hero">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
 
             <div class="hero-content">
 
-                <p class="hero-label">TRAVEL JOURNAL</p>
+                <div class="hero-label">
+                    <span></span>
+                    TRAVEL JOURNAL
+                </div>
 
                 <h1>
                     Discover the world,
-                    one story at a time.
+                    <em>one story</em> at a time.
                 </h1>
 
                 <p class="hero-description">
@@ -42,19 +55,166 @@
                     and stories from journeys around the world.
                 </p>
 
-                <a href="#" class="hero-button">
-                    Explore Journal
+                <div class="hero-actions">
+                    <a href="#destinations" class="hero-button">
+                        Explore Journal
+                        <span>→</span>
+                    </a>
+
+                    <a href="#about" class="text-link">
+                        Our story
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- Decorative visual -->
+            <div class="hero-visual">
+
+                <div class="travel-card">
+
+                    <div class="card-top">
+                        <span>JOURNEY 01</span>
+                        <span>2026</span>
+                    </div>
+
+                    <div class="card-image">
+                        <div class="sun"></div>
+                        <div class="mountain mountain-one"></div>
+                        <div class="mountain mountain-two"></div>
+                    </div>
+
+                    <div class="card-bottom">
+                        <div>
+                            <small>FEATURED DESTINATION</small>
+                            <h3>Chasing new horizons</h3>
+                        </div>
+
+                        <span class="arrow-circle">↗</span>
+                    </div>
+
+                </div>
+
+                <div class="floating-note">
+                    <span>✦</span>
+                    Stories worth remembering
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Destinations Section -->
+        <section class="destinations section" id="destinations">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">EXPLORE</p>
+                    <h2>Places that stay<br><em>with you.</em></h2>
+                </div>
+
+                <p>
+                    Every destination has a story.
+                    Wanderlog is a place to collect yours.
+                </p>
+
+            </div>
+
+
+            <div class="destination-grid">
+
+                <article class="destination-card">
+                    <div class="destination-number">01</div>
+                    <div class="destination-icon">↗</div>
+
+                    <h3>Find inspiration</h3>
+
+                    <p>
+                        Discover places, ideas and experiences
+                        that make you want to pack your bags.
+                    </p>
+                </article>
+
+
+                <article class="destination-card featured-card">
+                    <div class="destination-number">02</div>
+                    <div class="destination-icon">✦</div>
+
+                    <h3>Tell your story</h3>
+
+                    <p>
+                        Turn your journeys into personal stories
+                        that you can revisit anytime.
+                    </p>
+                </article>
+
+
+                <article class="destination-card">
+                    <div class="destination-number">03</div>
+                    <div class="destination-icon">♡</div>
+
+                    <h3>Keep the memories</h3>
+
+                    <p>
+                        Save the little moments that make
+                        every journey unforgettable.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- About Section -->
+        <section class="about section" id="about">
+
+            <div class="about-content">
+
+                <p class="eyebrow">OUR STORY</p>
+
+                <h2>
+                    A journal for the
+                    <em>curious.</em>
+                </h2>
+
+                <p class="about-text">
+                    Wanderlog is a space for travelers who believe
+                    that the best part of a journey is the story
+                    you bring home.
+                </p>
+
+                <a href="#home" class="back-link">
+                    Back to top ↑
                 </a>
 
+            </div>
+
+            <div class="about-mark">
+                W
             </div>
 
         </section>
 
     </main>
 
-    <footer>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="footer-logo">
+            <span class="logo-mark small">W</span>
+            <span>wanderlog</span>
+        </div>
+
         <p>© 2026 Wanderlog. All rights reserved.</p>
-    </footer>
+
+   </footer>
+
+<script src="script.js"></script>
 
 </body>
 
