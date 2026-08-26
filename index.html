@@ -122,48 +122,58 @@
                 </p>
 
             </div>
+            <div class="trip-form-wrapper">
 
+    <h3>Add a new trip</h3>
 
-            <div class="destination-grid">
+    <form id="trip-form">
 
-                <article class="destination-card">
-                    <div class="destination-number">01</div>
-                    <div class="destination-icon">↗</div>
+        <div class="form-group">
+            <label for="trip-title">Trip Title</label>
+            <input
+                type="text"
+                id="trip-title"
+                placeholder="e.g. My Goa Adventure"
+                required
+            >
+        </div>
 
-                    <h3>Find inspiration</h3>
+        <div class="form-group">
+            <label for="trip-destination">Destination</label>
+            <input
+                type="text"
+                id="trip-destination"
+                placeholder="e.g. Goa, India"
+                required
+            >
+        </div>
 
-                    <p>
-                        Discover places, ideas and experiences
-                        that make you want to pack your bags.
-                    </p>
-                </article>
+        <div class="form-group">
+            <label for="trip-date">Date</label>
+            <input
+                type="date"
+                id="trip-date"
+                required
+            >
+        </div>
 
+        <div class="form-group">
+            <label for="trip-notes">Notes</label>
+            <textarea
+                id="trip-notes"
+                placeholder="Write something about your trip..."
+                required
+            ></textarea>
+        </div>
 
-                <article class="destination-card featured-card">
-                    <div class="destination-number">02</div>
-                    <div class="destination-icon">✦</div>
+        <button type="submit" class="trip-submit" id="trip-submit">
+            Add Trip >
+        </button>
 
-                    <h3>Tell your story</h3>
+    </form>
 
-                    <p>
-                        Turn your journeys into personal stories
-                        that you can revisit anytime.
-                    </p>
-                </article>
-
-
-                <article class="destination-card">
-                    <div class="destination-number">03</div>
-                    <div class="destination-icon">♡</div>
-
-                    <h3>Keep the memories</h3>
-
-                    <p>
-                        Save the little moments that make
-                        every journey unforgettable.
-                    </p>
-                </article>
-
+</div>
+            <div class="destination-grid" id="trip-grid">
             </div>
 
         </section>
