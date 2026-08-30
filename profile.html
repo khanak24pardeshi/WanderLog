@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Traveler Profile | WanderLog</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- PROFILE HEADER -->
+    <header class="profile-header">
+
+        <a href="index.html" class="back-button">
+            ← Back to WanderLog
+        </a>
+
+
+        <!-- PROFILE INFORMATION -->
+        <div class="profile-info">
+
+            <div class="profile-avatar">
+                ✦
+            </div>
+
+            <div>
+
+                <p class="profile-label">
+                    TRAVELER PROFILE
+                </p>
+
+                <h1 id="profileName">
+                    Loading...
+                </h1>
+
+                <p id="profileBio">
+                    Loading profile...
+                </p>
+
+            </div>
+
+        </div>
+        <button id="editProfile" class="edit-profile-button">
+    Edit Profile
+</button>
+
+        <!-- PROFILE SETUP -->
+        <div class="profile-edit">
+
+            <h3>Set Up Your Profile</h3>
+
+            <input
+                type="text"
+                id="profileNameInput"
+                placeholder="Enter your name"
+            >
+
+            <textarea
+                id="profileBioInput"
+                placeholder="Write a short bio"
+            ></textarea>
+
+            <button id="saveProfile">
+                Save Profile
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- PROFILE TRIPS -->
+    <main class="profile-container">
+
+        <div class="profile-section-heading">
+
+            <p>TRAVEL JOURNAL</p>
+
+            <h2>My Trips</h2>
+
+        </div>
+
+
+        <div id="profileTripGrid" class="profile-trip-grid">
+
+            <p class="loading-text">
+                Loading trips...
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <script src="profile.js"></script>
+
+</body>
+
+</html>
