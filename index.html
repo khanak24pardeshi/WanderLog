@@ -26,6 +26,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#destinations">Destinations</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="profile.html" id="profileLink">Profile</a></li>
             </ul>
 
         </nav>
@@ -165,6 +166,17 @@
                 required
             ></textarea>
         </div>
+        <div class="form-group">
+    <label for="tripImage">Trip Cover Photo</label>
+    <input 
+        type="file" 
+        id="tripImage" 
+        accept="image/*"
+    >
+    <div id="imagePreviewContainer" style="display: none;">
+    <img id="imagePreview" src="" alt="Trip Preview">
+</div>
+</div>
 
         <button type="submit" class="trip-submit" id="trip-submit">
             Add Trip >

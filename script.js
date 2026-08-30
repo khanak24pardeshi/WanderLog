@@ -160,17 +160,19 @@ tripForm.addEventListener("submit", (event) => {
 
             trips[tripIndex] = {
 
-                id: editingTripId,
+    id: editingTripId,
 
-                title: tripTitle.value.trim(),
+    title: tripTitle.value.trim(),
 
-                destination: tripDestination.value.trim(),
+    destination: tripDestination.value.trim(),
 
-                date: tripDate.value,
+    date: tripDate.value,
 
-                notes: tripNotes.value.trim()
+    notes: tripNotes.value.trim(),
 
-            };
+    image: tripImageBase64 || trips[tripIndex].image || ""
+
+};
         }
 
         localStorage.setItem(
@@ -181,6 +183,11 @@ tripForm.addEventListener("submit", (event) => {
         editingTripId = null;
 
         tripForm.reset();
+        tripImageBase64 = "";
+
+imagePreview.src = "";
+
+imagePreviewContainer.style.display = "none";
 
         tripSubmit.textContent = "Add Trip →";
 
@@ -198,17 +205,19 @@ tripForm.addEventListener("submit", (event) => {
 
     const newTrip = {
 
-        id: Date.now(),
+    id: Date.now(),
 
-        title: tripTitle.value.trim(),
+    title: tripTitle.value.trim(),
 
-        destination: tripDestination.value.trim(),
+    destination: tripDestination.value.trim(),
 
-        date: tripDate.value,
+    date: tripDate.value,
 
-        notes: tripNotes.value.trim()
+    notes: tripNotes.value.trim(),
 
-    };
+    image: tripImageBase64
+
+};
 
     trips.push(newTrip);
 
@@ -218,6 +227,9 @@ tripForm.addEventListener("submit", (event) => {
     );
 
     tripForm.reset();
+    tripImageBase64 = "";
+    imagePreview.src = "";
+    imagePreviewContainer.style.display = "none";
 
     renderTrips();
 
@@ -279,6 +291,17 @@ function renderTrips() {
             </div>
 
             <div class="destination-icon">✦</div>
+            ${trip.image ? `
+    <img
+        src="${trip.image}"
+        alt="${trip.title}"
+        class="trip-image"
+    >
+` : `
+    <div class="trip-image-placeholder">
+        ✦ No photo available
+    </div>
+`}
 
             <h3>${trip.title}</h3>
 
@@ -312,7 +335,20 @@ function renderTrips() {
 
             </div>
         `;
+        tripCard.addEventListener("click", (event) => {
 
+    // Don't open detail page when clicking Edit or Delete
+    if (
+        event.target.classList.contains("edit-trip") ||
+        event.target.classList.contains("delete-trip")
+    ) {
+        return;
+    }
+
+    // Open selected trip detail page
+    window.location.href = `trip.html?id=${trip.id}`;
+
+    });
         tripGrid.appendChild(tripCard);
 
     });
@@ -340,7 +376,21 @@ function editTrip(id) {
     tripDestination.value = trip.destination;
     tripDate.value = trip.date;
     tripNotes.value = trip.notes;
+    tripImageBase64 = trip.image || "";
 
+if (trip.image) {
+
+    imagePreview.src = trip.image;
+
+    imagePreviewContainer.style.display = "block";
+
+} else {
+
+    imagePreview.src = "";
+
+    imagePreviewContainer.style.display = "none";
+
+}
     // Remember which trip we are editing
     editingTripId = id;
 
@@ -431,4 +481,44 @@ function showSuccessMessage(message) {
     setTimeout(() => {
         notification.remove();
     }, 3000);
+}
+const tripImageInput = document.getElementById("tripImage");
+const imagePreview = document.getElementById("imagePreview");
+const imagePreviewContainer = document.getElementById("imagePreviewContainer");
+let tripImageBase64 = "";
+
+tripImageInput.addEventListener("change", function () {
+    const file = this.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+
+            // Save image as Base64
+            tripImageBase64 = e.target.result;
+
+            // Show preview
+            imagePreview.src = tripImageBase64;
+
+            imagePreviewContainer.style.display = "block";
+        };
+
+        reader.readAsDataURL(file);
+    }
+});
+// ========================================
+// DYNAMIC PROFILE LINK
+// ========================================
+
+const profileLink = document.getElementById("profileLink");
+
+const savedUserName =
+    localStorage.getItem("wanderlogUserName");
+
+if (profileLink && savedUserName) {
+
+    profileLink.href =
+        `profile.html?user=${encodeURIComponent(savedUserName)}`;
+
 }
