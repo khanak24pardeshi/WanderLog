@@ -1126,7 +1126,7 @@ body.modal-open {
 }
 
 .edit-trip:hover {
-    background: #cbb793;
+    background: #0c97dd;
     transform: translateY(-2px);
 }
 
@@ -1376,9 +1376,21 @@ body.modal-open {
 
 .trip-detail-image {
     width: 100%;
-    height: 400px;
+    height: 250px;
     object-fit: cover;
     display: block;
+}
+
+@media (max-width: 768px) {
+    .trip-detail-image {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .trip-detail-image {
+        height: 200px;
+    }
 }
 
 
@@ -1648,4 +1660,116 @@ body.modal-open {
     transform: translateY(-2px);
 
     background: #2e5a4f;
+}
+/* ================================
+   PROFILE EDIT FORM
+================================ */
+
+.profile-edit {
+    width: 100%;
+    max-width: 600px;
+
+    margin: 35px auto 0;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+.profile-edit h3 {
+    margin: 0 0 10px;
+
+    font-size: 22px;
+}
+
+
+.profile-edit input,
+.profile-edit textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    font-size: 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    font-family: inherit;
+}
+
+
+.profile-edit textarea {
+    min-height: 110px;
+
+    resize: vertical;
+}
+
+
+.profile-edit input:focus,
+.profile-edit textarea:focus {
+    border-color: #1f3b34;
+
+    box-shadow: 0 0 0 3px rgba(31, 59, 52, 0.1);
+}
+
+
+#saveProfile {
+    align-self: flex-start;
+
+    padding: 12px 22px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #1f3b34;
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+#saveProfile:hover {
+    background: #2e5a4f;
+
+    transform: translateY(-2px);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .profile-edit {
+        padding: 20px;
+    }
+
+    #saveProfile {
+        width: 100%;
+    }
+
+}
+/* Prevent horizontal scrolling on smaller screens */
+@media (max-width: 900px) {
+    .trip-form-wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
 }
