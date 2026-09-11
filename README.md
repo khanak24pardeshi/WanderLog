@@ -61,7 +61,11 @@ WonderLog/
 ![Traveller profile](image-6.png)
 ## Deployment
 
-The live website link will be added here after deployment.
+## 🌐 Live Demo
+
+🚀 [Visit WanderLog](https://wanderlog-codgen.vercel.app/)
+
+The project is deployed and available online using Vercel.
 
 ## Repository
 
